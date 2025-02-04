@@ -13,7 +13,7 @@
             <option value="Hello">Hello</option>
             <option value="hi">hi</option>
             <option value="hola">hola</option>
-            <option value="ሰላም">ሰላም</option>
+            <option value="ሰላም" selected>ሰላም</option>
         </select>
         <input
             type="text"
@@ -32,7 +32,7 @@
     </form>
     @if($name !== '' )
         <div class="mt-5">
-            {{ $greeting }}👋 it's {{ $name }} there form livewire
+            {{ $greeting }}👋 it's {{ $name }} form livewire
         </div>
     @endif
 </div>
