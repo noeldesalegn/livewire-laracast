@@ -1,7 +1,7 @@
 <div>
 
     <form
-         wire:submit="changeName()"
+         wire:submit="changeGreeting()"
         >
     <div class="mt-2">
         <select
@@ -22,17 +22,22 @@
             wire:model="name"
         >
     </div>
+        <div class="mt-2 mb-1">
+            @error('name')
+            {{ $message }}
+            @enderror
+        </div>
     <div class="mt-2">
         <button
             type="submit"
-            class="text-white font-medium rounded-md mt-4 px-4 py-2 bg-blue-500">
+            class="text-white font-medium rounded-md mt-2 px-4 py-2 bg-blue-500">
             Greet
         </button>
     </div>
     </form>
-    @if($name !== '' )
+    @if($greetingMessage !== '' )
         <div class="mt-5">
-            {{ $greeting }}👋 it's {{ $name }} form livewire
+            {{ $greetingMessage }}
         </div>
     @endif
 </div>

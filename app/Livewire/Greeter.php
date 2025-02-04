@@ -9,8 +9,16 @@ class Greeter extends Component
     public $name = '';
     public $greeting = '';
 
-public function changeName() {
+    public $greetingMessage = '';
 
+public function changeGreeting() {
+    $this->reset('greetingMessage');
+    $this->validate([
+        'name' => 'required|min:2',
+    ]);
+    $this->greetingMessage = "{$this->greeting} , {$this->name}";
+//    or use  concatenation like this
+//    $this->greetingMessage = $this->greeting . ' , ' . $this->name;
 }
     public function render()
     {
