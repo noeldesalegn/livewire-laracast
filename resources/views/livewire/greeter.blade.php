@@ -1,16 +1,25 @@
 <div>
-    <div>
-        Hi 👋 it's {{ $name }} there form livewire
-    </div>
+
     <form
-         wire:submit="changeName( document.querySelector('#newName').value )"
+         wire:submit="changeName()"
         >
     <div class="mt-2">
-        <input
-            id="newName"
+        <select
             type="text"
-            class="w-full text-white bg-gray-600 block border-gray-300 rounded-md p-2"
+            class="text-white bg-gray-700 border-red-600-300 rounded-md p-2 pr-8"
             placeholder="Enter your name"
+            wire:model.fill="greeting"
+        >
+            <option value="Hello">Hello</option>
+            <option value="hi">hi</option>
+            <option value="hola">hola</option>
+            <option value="ሰላም">ሰላም</option>
+        </select>
+        <input
+            type="text"
+            class=" text-white bg-gray-700 border-gray-300 rounded-md p-2"
+            placeholder="Enter your name"
+            wire:model="name"
         >
     </div>
     <div class="mt-2">
@@ -21,4 +30,9 @@
         </button>
     </div>
     </form>
+    @if($name !== '' )
+        <div class="mt-5">
+            {{ $greeting }}👋 it's {{ $name }} there form livewire
+        </div>
+    @endif
 </div>
