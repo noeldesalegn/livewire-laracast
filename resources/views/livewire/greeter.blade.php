@@ -22,7 +22,7 @@
             wire:model="name"
         >
     </div>
-        <div class="mt-2 mb-1">
+        <div class="mt-2 mb-1 text-red-500">
             @error('name')
             {{ $message }}
             @enderror
