@@ -10,10 +10,7 @@
             placeholder="Enter your name"
             wire:model.fill="greeting"
         >
-            <option value="Hello">Hello</option>
-            <option value="hi">hi</option>
-            <option value="hola">hola</option>
-            <option value="ሰላም" selected>ሰላም</option>
+
         </select>
         <input
             type="text"

@@ -19,7 +19,9 @@ class Greeter extends Component
         $this->validate(); // Ensure this is uncommented
         $this->greetingMessage = "{$this->greeting} , {$this->name}";
     }
+    public function mount(){
 
+    }
     public function render()
     {
         return view('livewire.greeter');
