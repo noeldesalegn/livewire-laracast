@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\Greeting;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,23 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+//         User::factory(10)->create();
 
-//        User::factory()->create([
-//            'name' => 'Test User',
-//            'email' => 'test@example.com',
-//        ]);
-        Greeting::create([
-            'greeting' => 'Hello',
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
         ]);
         Greeting::create([
-            'greeting' => 'Hi',
+            'text' => 'Hello',
         ]);
         Greeting::create([
-            'greeting' => 'ሰላም',
+            'text' => 'Hi',
         ]);
         Greeting::create([
-            'greeting' => 'Hola',
+            'text' => 'ሰላም',
         ]);
+        Greeting::create([
+            'text' => 'Hola',
+        ]);
+        Article::factory()->count(10)->create();
     }
 }
