@@ -6,7 +6,7 @@
 
         <title>{{ $title ?? 'Articles' }}</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -17,7 +17,7 @@
             </style>
         @endif
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+    <body  class="font-sans antialiased dark:bg-black dark:text-white/50" x-data x-on:click="$dispatch('search:clear-results')">
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <div class="relative flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
@@ -36,5 +36,10 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('search:clear-results', function (e) {
+            console.log('cleared results');
+        });
+    </script>
     </body>
 </html>
