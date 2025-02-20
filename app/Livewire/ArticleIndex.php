@@ -7,14 +7,11 @@ use Livewire\Component;
 
 class ArticleIndex extends Component
 {
-    public $articles = [];
 
-    public function mount()
-    {
-        $this->articles = Article::all();
-    }
     public function render()
     {
-        return view('livewire.article-index');
+        return view('livewire.article-index',[
+            'articles' => Article::all(),
+        ]);
     }
 }
