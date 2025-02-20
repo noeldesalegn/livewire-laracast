@@ -17,8 +17,8 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->realText(10),
-            'content' => $this->faker->realText(50),
+            'title' => $this->faker->realText(15),
+            'content' => $this->faker->realText(500),
         ];
     }
 }
